@@ -17,9 +17,6 @@ auth.set_access_token(access_token, access_secret)
 
 api = tweepy.API(auth)
 
-for status in tweepy.Cursor(api.home_timeline).items(10):
-    print(status.text)
-
 class listener(StreamListener):
     def on_data(self, data):
         print(data)
@@ -29,4 +26,4 @@ class listener(StreamListener):
         print (status)
 
 twitterStream = Stream(auth, listener())
-twitterStream.filter(track=["car"])
+twitterStream.filter(track=["trump"])
